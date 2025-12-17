@@ -3,15 +3,15 @@
 
 - op: replace
   path: /spec/databaseStorage/storageClassName
-  value: "ocs-storagecluster-cephfs"  # filesystem StorageClass
+  value: "lvms-vg1"  # filesystem StorageClass
 
 - op: replace
   path: /spec/filesystemStorage/storageClassName
-  value: "ocs-storagecluster-cephfs"  # filesystem StorageClass
+  value: "lvms-vg1"  # filesystem StorageClass
 
 - op: replace
   path: /spec/imageStorage/storageClassName
-  value: "ocs-storagecluster-cephfs"  # filesystem StorageClass
+  value: "lvms-vg1"  # filesystem StorageClass
 
   # Configure the osImages urls.
   # When disconnected, the urls should point to a mirrored registry.
@@ -39,5 +39,5 @@
 
 # In case of connected enviroment we dont need neither to configure
 # nor use an internal registry on the spokes. So, uncomment below to remove it:
-# - op: remove
-#   path: /spec/mirrorRegistryRef
+- op: remove
+  path: /spec/mirrorRegistryRef
